@@ -1,9 +1,14 @@
 package com.mukul;
 
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!");
+import com.mukul.controller.AuthController;
+import com.mukul.model.AuthModel;
+import com.mukul.view.AuthView;
+
+public class App {
+    public static void main(String[] args) {
+        AuthModel model = new AuthModel();
+        AuthView view = new AuthView();
+        AuthController controller = new AuthController(model, view);
+        controller.showView();
     }
 }
