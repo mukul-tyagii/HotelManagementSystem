@@ -34,7 +34,7 @@ public class RoomManagerView {
 
         roomTable.getSelectionModel().addListSelectionListener(e -> {
             int i = e.getLastIndex();
-            if (i > roomTableModel.getRowCount()) return;
+            if (i >= roomTableModel.getRowCount()) return;
             IDTextField.setText(String.valueOf((int) roomTableModel.getValueAt(i, 0)));
             phoneTextField.setText((String) roomTableModel.getValueAt(i, 1));
             reservedCB.setSelected((boolean) roomTableModel.getValueAt(i, 2));

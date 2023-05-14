@@ -33,7 +33,7 @@ public class ClientManagerView {
 
         clientTable.getSelectionModel().addListSelectionListener(e -> {
             int i = e.getLastIndex();
-            if (i > clientTableModel.getRowCount()) return;
+            if (i >= clientTableModel.getRowCount()) return;
             IDTextField.setText(String.valueOf((int) clientTableModel.getValueAt(i, 0)));
             nameTextField.setText((String) clientTableModel.getValueAt(i, 1));
             phoneTextField.setText((String) clientTableModel.getValueAt(i, 2));
