@@ -8,7 +8,6 @@ public class App {
     public static void main(String[] args) {
         AuthModel model = new AuthModel();
         AuthView view = new AuthView();
-        AuthController controller = new AuthController(model, view);
-        controller.showView();
+        new AuthController(model, view).showView();
     }
 }
