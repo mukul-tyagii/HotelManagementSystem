@@ -2,8 +2,10 @@ package com.mukul.controller;
 
 import com.mukul.model.AuthModel;
 import com.mukul.model.ClientDAO;
+import com.mukul.model.RoomDAO;
 import com.mukul.view.AuthView;
 import com.mukul.view.ClientManagerView;
+import com.mukul.view.RoomManagerView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -48,6 +50,9 @@ public class AuthController {
                     ClientDAO dao = new ClientDAO();
                     ClientManagerView view = new ClientManagerView();
                     new ClientController(dao, view).showView();
+                    RoomDAO dao1 = new RoomDAO();
+                    RoomManagerView view1 = new RoomManagerView();
+                    new RoomController(dao1, view1).showView();
                 } catch (SQLException ex) {
                     view.showMessage(ex.getMessage());
                 }
