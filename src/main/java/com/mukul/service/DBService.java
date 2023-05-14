@@ -25,10 +25,16 @@ public class DBService {
 
     void createAllTables() throws SQLException {
         createClientTable();
+        createRoomTable();
     }
 
     void createClientTable() throws SQLException {
         Statement st = conn.createStatement();
         st.executeUpdate("CREATE TABLE IF NOT EXISTS Client(id INTEGER PRIMARY KEY, name TEXT, phone INTEGER)");
+    }
+
+    void createRoomTable() throws SQLException {
+        Statement st = conn.createStatement();
+        st.executeUpdate("CREATE TABLE IF NOT EXISTS Room(id INTEGER PRIMARY KEY, phone INTEGER, reserved INTEGER)");
     }
 }
