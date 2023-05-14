@@ -45,6 +45,12 @@ public class RoomManagerView {
                 return false;
             }
         });
+
+        roomTable.getColumnModel().getColumn(2).setCellEditor(new DefaultCellEditor(new JTextField()) {
+            public boolean isCellEditable(EventObject e) {
+                return false;
+            }
+        });
     }
 
     public int getId() {
