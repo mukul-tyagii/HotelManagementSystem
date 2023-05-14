@@ -22,10 +22,10 @@ public class RoomDAO {
 
         while (rs.next()) {
             int id = rs.getInt("id");
-            String name = rs.getString("name");
+            String phone = rs.getString("phone");
             boolean isReserved = rs.getBoolean("reserved");
 
-            Room Room = new Room(id, name, isReserved);
+            Room Room = new Room(id, phone, isReserved);
             Rooms.add(Room);
         }
 
