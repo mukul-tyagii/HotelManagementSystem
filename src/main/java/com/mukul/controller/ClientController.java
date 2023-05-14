@@ -5,6 +5,9 @@ import com.mukul.model.ClientDAO;
 import com.mukul.view.ClientManagerView;
 
 import javax.swing.*;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -24,6 +27,7 @@ public class ClientController {
         view.addDeleteListener(new DeleteListener());
         view.addUpdateListener(new UpdateListener());
         view.addRefreshListener(new RefreshListener());
+        view.addClientTableModelListener(new TableUpdateListener());
     }
 
     private void refreshTable() {
@@ -89,6 +93,25 @@ public class ClientController {
         @Override
         public void actionPerformed(ActionEvent e) {
             refreshTable();
+        }
+    }
+
+    class TableUpdateListener implements TableModelListener {
+
+        @Override
+        public void tableChanged(TableModelEvent e) {
+            if (e.getType() == TableModelEvent.UPDATE) {
+                int row = e.getFirstRow();
+                DefaultTableModel model = view.getClientTableModel();
+                int id = (int) model.getValueAt(row, 0);
+                String name = (String) model.getValueAt(row, 1);
+                String phone = (String) model.getValueAt(row, 2);
+                try {
+                    dao.updateClient(new Client(id, name, phone));
+                } catch (SQLException ex) {
+                    view.showMessage(ex.getMessage());
+                }
+            }
         }
     }
 
