@@ -25,7 +25,7 @@ public class AuthController {
     }
 
     public void showView() {
-        frame = new JFrame("Login");
+        frame = new JFrame("");
         frame.setContentPane(view.getRootPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
