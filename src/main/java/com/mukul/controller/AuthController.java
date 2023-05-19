@@ -1,16 +1,12 @@
 package com.mukul.controller;
 
 import com.mukul.model.AuthModel;
-import com.mukul.model.ClientDAO;
-import com.mukul.model.RoomDAO;
 import com.mukul.view.AuthView;
-import com.mukul.view.ClientManagerView;
-import com.mukul.view.RoomManagerView;
+import com.mukul.view.DashboardView;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 public class AuthController {
 
@@ -31,6 +27,7 @@ public class AuthController {
         frame.setContentPane(view.getRootPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
@@ -45,18 +42,8 @@ public class AuthController {
             if (isAuthenticated) {
                 view.showMessage("Login successful!");
                 frame.setVisible(false);
-
-                try {
-                    ClientDAO dao = new ClientDAO();
-                    ClientManagerView view = new ClientManagerView();
-                    new ClientController(dao, view).showView();
-                    RoomDAO dao1 = new RoomDAO();
-                    RoomManagerView view1 = new RoomManagerView();
-                    new RoomController(dao1, view1).showView();
-                } catch (SQLException ex) {
-                    view.showMessage(ex.getMessage());
-                }
-
+                DashboardView view1 = new DashboardView();
+                new DashboardController(view1).showView();
             } else {
                 view.showMessage("Invalid username or password. Please try again.");
             }
