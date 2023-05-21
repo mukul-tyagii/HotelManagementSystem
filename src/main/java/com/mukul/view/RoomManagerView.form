@@ -30,7 +30,7 @@
                 </constraints>
                 <properties>
                   <labelFor value="99f6b"/>
-                  <text resource-bundle="i18n/en" key="id"/>
+                  <text resource-bundle="i18n/strings" key="id"/>
                 </properties>
               </component>
               <component id="dd776" class="javax.swing.JLabel">
@@ -39,7 +39,7 @@
                 </constraints>
                 <properties>
                   <labelFor value="cbf63"/>
-                  <text resource-bundle="i18n/en" key="phone"/>
+                  <text resource-bundle="i18n/strings" key="phone"/>
                 </properties>
               </component>
               <component id="a95e5" class="javax.swing.JTextField" binding="phoneTextField" default-binding="true">
@@ -63,7 +63,7 @@
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text resource-bundle="i18n/en" key="is.reserved"/>
+                  <text resource-bundle="i18n/strings" key="is.reserved"/>
                 </properties>
               </component>
             </children>
@@ -73,7 +73,7 @@
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text resource-bundle="i18n/en" key="insert"/>
+              <text resource-bundle="i18n/strings" key="insert"/>
             </properties>
           </component>
           <component id="10e4d" class="javax.swing.JButton" binding="updateButton" default-binding="true">
@@ -81,7 +81,7 @@
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text resource-bundle="i18n/en" key="update"/>
+              <text resource-bundle="i18n/strings" key="update"/>
             </properties>
           </component>
           <component id="c258f" class="javax.swing.JButton" binding="deleteButton" default-binding="true">
@@ -89,7 +89,7 @@
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text resource-bundle="i18n/en" key="delete"/>
+              <text resource-bundle="i18n/strings" key="delete"/>
             </properties>
           </component>
           <vspacer id="cd79a">
@@ -117,7 +117,7 @@
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text resource-bundle="i18n/en" key="refresh"/>
+              <text resource-bundle="i18n/strings" key="refresh"/>
             </properties>
           </component>
           <scrollpane id="ff63a">
